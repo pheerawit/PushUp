@@ -7,13 +7,14 @@
 //
 
 #import "TimeAtkViewController.h"
-
+#import <AudioToolbox/AudioToolbox.h>
 @interface TimeAtkViewController ()
 
 @end
 
 @implementation TimeAtkViewController
 int minute;
+int count2;
 int secDisplay;
 NSArray *mins;
 NSArray *second;
@@ -46,6 +47,22 @@ NSTimer *timer;
     self.setTime.dataSource = self;
     self.setTime.delegate = self;
     // Do any additional setup after loading the view.
+    count2 =0;
+    UIDevice *device = [UIDevice currentDevice];
+    device.proximityMonitoringEnabled = YES;
+    if (device.proximityMonitoringEnabled == YES){
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(proximityChanged:) name:@"UIDeviceProximityStateDidChangeNotification" object:device];
+    }
+
+}
+
+- (void) proximityChanged:(NSNotification *)notification {
+	UIDevice *device = [notification object];
+	NSLog(@"In proximity: %i", device.proximityState);
+    if(device.proximityState){
+        count2++;
+    }
+    _display2.text = [NSString stringWithFormat:@"%i",count2];
 }
 
 - (void)didReceiveMemoryWarning
@@ -113,6 +130,16 @@ NSTimer *timer;
 - (void) setCommand
 {
     if(minute == 0 && secDisplay ==0){
+        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+        // Also issue visual alert
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"Running out of time !"
+                              message:nil
+                              delegate:nil
+                              cancelButtonTitle:nil
+                              otherButtonTitles:@"OK", nil];
+        [alert show];
+
         [self resetTime:self];
     }else if(secDisplay == 0){
         minute -= 1;
@@ -139,6 +166,8 @@ NSTimer *timer;
 - (IBAction)resetTime:(id)sender {
     _setTime.hidden = NO;
     _counting.hidden = YES;
+    count2 = 0;
+    _display2.text = [NSString stringWithFormat:@"%i",count2];
 }
 
 /*

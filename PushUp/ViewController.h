@@ -10,7 +10,6 @@
 
 @interface ViewController : UIViewController
 {
-    
     IBOutlet UILabel *display;
 }
 @property (weak, nonatomic) IBOutlet UILabel *show;

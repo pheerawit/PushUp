@@ -38,8 +38,6 @@ int sec;
     display.text = [NSString stringWithFormat:@"%i",count];
 }
 
-
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

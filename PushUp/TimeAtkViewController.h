@@ -12,5 +12,6 @@
 @property (weak, nonatomic) IBOutlet UIPickerView *setTime;
 - (IBAction)startCount:(id)sender;
 - (IBAction)resetTime:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *display2;
 @property (weak, nonatomic) IBOutlet UILabel *counting;
 @end
