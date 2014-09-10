@@ -22,7 +22,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hEI-Za-Xbc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="201" y="146"/>
+            <point key="canvasLocation" x="181" y="500"/>
         </scene>
         <!--View Controller - Best Record-->
         <scene sceneID="TX5-hz-s6l">
@@ -41,7 +41,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xEx-SI-hjE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="821" y="1156"/>
+            <point key="canvasLocation" x="725" y="1160"/>
         </scene>
         <!--View Controller - Normal-->
         <scene sceneID="eoW-dH-Kpu">
@@ -133,7 +133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xre-dS-75I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="821" y="-207"/>
+            <point key="canvasLocation" x="725" y="-193"/>
         </scene>
         <!--Time Atk View Controller - Time Attack-->
         <scene sceneID="NPM-xO-nDA">
@@ -190,7 +190,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fb3-Tb-OPe">
-                                <rect key="frame" x="139" y="385" width="42" height="46"/>
+                                <rect key="frame" x="114" y="373" width="92" height="83"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
                                 <nil key="highlightedColor"/>
@@ -219,7 +219,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ek7-EZ-jH3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="821" y="438"/>
+            <point key="canvasLocation" x="725" y="500"/>
         </scene>
     </scenes>
     <resources>

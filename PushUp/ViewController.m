@@ -17,14 +17,11 @@ int count;
 NSTimer *timer;
 int min;
 int sec;
+UIDevice *device;
 - (void)viewDidLoad
 {
     count =0;
-    UIDevice *device = [UIDevice currentDevice];
-    device.proximityMonitoringEnabled = YES;
-    if (device.proximityMonitoringEnabled == YES){
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(proximityChanged:) name:@"UIDeviceProximityStateDidChangeNotification" object:device];
-    }
+    device = [UIDevice currentDevice];
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
@@ -67,9 +64,15 @@ int sec;
 }
 
 - (IBAction)start:(id)sender {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"UIDeviceProximityStateDidChangeNotification" object:device];
     if(timer == nil){
         timer = [NSTimer scheduledTimerWithTimeInterval:1.00 target:self selector:@selector(setCommand) userInfo:nil repeats:YES];
     }
+    device.proximityMonitoringEnabled = YES;
+    if (device.proximityMonitoringEnabled == YES){
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(proximityChanged:) name:@"UIDeviceProximityStateDidChangeNotification" object:device];
+    }
+
 }
 
 - (IBAction)stop:(id)sender {
@@ -77,6 +80,8 @@ int sec;
 		[timer invalidate];
 		timer = nil;
 	}
+    device.proximityMonitoringEnabled = NO;
+
 }
 
 - (IBAction)reset:(id)sender {
@@ -86,6 +91,12 @@ int sec;
     _show.text = [NSString stringWithFormat:@"0%i : 0%i",min,sec];
     count = 0;
     display.text = [NSString stringWithFormat:@"%i",count];
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    [self stop:self];
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
 
 

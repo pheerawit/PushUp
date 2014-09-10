@@ -18,9 +18,10 @@ int count2;
 int secDisplay;
 NSArray *mins;
 NSArray *second;
-NSString *min;
-NSString *sec;
+NSString *minlbl;
+NSString *seclbl;
 NSTimer *timer;
+UIDevice *device;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -34,6 +35,8 @@ NSTimer *timer;
 {
     [super viewDidLoad];
     //set visible
+    NSLog(@"Time Atk");
+    device.proximityMonitoringEnabled = NO;
     _counting.hidden = YES;
     // Do any additional setup after loading the view.
     mins = [[NSArray alloc]init];
@@ -48,16 +51,12 @@ NSTimer *timer;
     self.setTime.delegate = self;
     // Do any additional setup after loading the view.
     count2 =0;
-    UIDevice *device = [UIDevice currentDevice];
-    device.proximityMonitoringEnabled = YES;
-    if (device.proximityMonitoringEnabled == YES){
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(proximityChanged:) name:@"UIDeviceProximityStateDidChangeNotification" object:device];
-    }
+
 
 }
 
 - (void) proximityChanged:(NSNotification *)notification {
-	UIDevice *device = [notification object];
+	//UIDevice *device = [notification object];
 	NSLog(@"In proximity: %i", device.proximityState);
     if(device.proximityState){
         count2++;
@@ -92,21 +91,25 @@ NSTimer *timer;
 // The data to return for the row and component (column) that's being passed in
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    min = @"min";
-    sec = @"sec";
+    minlbl = @"min";
+    seclbl = @"sec";
     //    return picker[row];
     if(component == 0){
         return [mins objectAtIndex:row];
     }else if(component == 1){
-        return min;
+        return minlbl;
     }else if(component == 2){
         return [second objectAtIndex:row];
     }else if(component == 3){
-        return sec;
+        return seclbl;
     }
     return @"eiei";
 }
 - (IBAction)startCount:(id)sender {
+    count2 = 0;
+    _display2.text = [NSString stringWithFormat:@"%i",count2];
+    device =[UIDevice currentDevice];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"UIDeviceProximityStateDidChangeNotification" object:device];
     _setTime.hidden = YES;
     _counting.hidden = NO;
     //get data
@@ -126,6 +129,10 @@ NSTimer *timer;
     if(timer == nil){
         timer = [NSTimer scheduledTimerWithTimeInterval:1.00 target:self selector:@selector(setCommand) userInfo:nil repeats:YES];
     }
+    device.proximityMonitoringEnabled = YES;
+    if (device.proximityMonitoringEnabled == YES){
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(proximityChanged:) name:@"UIDeviceProximityStateDidChangeNotification" object:device];
+    }
 }
 - (void) setCommand
 {
@@ -133,14 +140,13 @@ NSTimer *timer;
         AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
         // Also issue visual alert
         UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle:@"Running out of time !"
+                              initWithTitle:@"Time out!"
                               message:nil
                               delegate:nil
                               cancelButtonTitle:nil
                               otherButtonTitles:@"OK", nil];
         [alert show];
-
-        [self resetTime:self];
+        [self resetClock];
     }else if(secDisplay == 0){
         minute -= 1;
         secDisplay = 60;
@@ -164,21 +170,37 @@ NSTimer *timer;
 
 
 - (IBAction)resetTime:(id)sender {
+    if(timer){
+        [timer invalidate];
+        timer = nil;
+    }
     _setTime.hidden = NO;
     _counting.hidden = YES;
     count2 = 0;
     _display2.text = [NSString stringWithFormat:@"%i",count2];
+    device.proximityMonitoringEnabled = NO;
+}
+-(void)resetClock{
+    if(timer){
+        [timer invalidate];
+        timer = nil;
+    }
+    _setTime.hidden = NO;
+    _counting.hidden = YES;
+    device.proximityMonitoringEnabled = NO;
+
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    [self resetTime:self];
+    NSLog(@"Call");
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end

@@ -23,6 +23,7 @@
 		2709E8AA19BF0B6B005B8D99 /* PushUpTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2709E8A919BF0B6B005B8D99 /* PushUpTests.m */; };
 		2709E8B519BF2474005B8D99 /* TimeAtkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2709E8B419BF2474005B8D99 /* TimeAtkViewController.m */; };
 		2709E8B819BF24E6005B8D99 /* BestRecViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2709E8B719BF24E6005B8D99 /* BestRecViewController.m */; };
+		271DC4B019C0A93300C4A7E2 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 271DC4AF19C0A93300C4A7E2 /* TabBarViewController.m */; };
 		3A185F0919C00529009BFB29 /* EX.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A185F0819C00529009BFB29 /* EX.png */; };
 		3A53D0F119BFFF5D00C8D788 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A53D0F019BFFF5D00C8D788 /* Default.png */; };
 		3A6CC6C419C0040800A1D756 /* TROPHY.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A6CC6C319C0040800A1D756 /* TROPHY.png */; };
@@ -64,8 +65,10 @@
 		2709E8B419BF2474005B8D99 /* TimeAtkViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeAtkViewController.m; sourceTree = "<group>"; };
 		2709E8B619BF24E6005B8D99 /* BestRecViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BestRecViewController.h; sourceTree = "<group>"; };
 		2709E8B719BF24E6005B8D99 /* BestRecViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BestRecViewController.m; sourceTree = "<group>"; };
+		271DC4AE19C0A93300C4A7E2 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
+		271DC4AF19C0A93300C4A7E2 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		3A185F0819C00529009BFB29 /* EX.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EX.png; sourceTree = "<group>"; };
-		3A238E3419C066B100266AF5 /* ICON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ICON.png; sourceTree = "<group>"; };
+		3A238E3419C066B100266AF5 /* ICON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ICON.png; path = ../ICON.png; sourceTree = "<group>"; };
 		3A53D0F019BFFF5D00C8D788 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		3A6CC6C319C0040800A1D756 /* TROPHY.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TROPHY.png; sourceTree = "<group>"; };
 		3A8353D919C0035E0042B8AA /* TIME.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TIME.png; sourceTree = "<group>"; };
@@ -99,7 +102,6 @@
 		2709E87219BF0B6A005B8D99 = {
 			isa = PBXGroup;
 			children = (
-				3A238E3419C066B100266AF5 /* ICON.png */,
 				2709E88419BF0B6A005B8D99 /* PushUp */,
 				2709E8A319BF0B6B005B8D99 /* PushUpTests */,
 				2709E87D19BF0B6A005B8D99 /* Frameworks */,
@@ -133,6 +135,8 @@
 				2709E88D19BF0B6A005B8D99 /* AppDelegate.h */,
 				2709E88E19BF0B6A005B8D99 /* AppDelegate.m */,
 				2709E89019BF0B6B005B8D99 /* Main.storyboard */,
+				271DC4AE19C0A93300C4A7E2 /* TabBarViewController.h */,
+				271DC4AF19C0A93300C4A7E2 /* TabBarViewController.m */,
 				2709E8B619BF24E6005B8D99 /* BestRecViewController.h */,
 				2709E8B719BF24E6005B8D99 /* BestRecViewController.m */,
 				2709E8B319BF2474005B8D99 /* TimeAtkViewController.h */,
@@ -148,6 +152,7 @@
 		2709E88519BF0B6A005B8D99 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3A238E3419C066B100266AF5 /* ICON.png */,
 				3A8353D919C0035E0042B8AA /* TIME.png */,
 				3AC3B7AD19C011EA00CA0D36 /* ICON.png */,
 				3A6CC6C319C0040800A1D756 /* TROPHY.png */,
@@ -288,6 +293,7 @@
 				2709E89519BF0B6B005B8D99 /* ViewController.m in Sources */,
 				2709E88F19BF0B6A005B8D99 /* AppDelegate.m in Sources */,
 				2709E8B819BF24E6005B8D99 /* BestRecViewController.m in Sources */,
+				271DC4B019C0A93300C4A7E2 /* TabBarViewController.m in Sources */,
 				2709E88B19BF0B6A005B8D99 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
