@@ -24,6 +24,7 @@
 		2709E8B519BF2474005B8D99 /* TimeAtkViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2709E8B419BF2474005B8D99 /* TimeAtkViewController.m */; };
 		2709E8B819BF24E6005B8D99 /* BestRecViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2709E8B719BF24E6005B8D99 /* BestRecViewController.m */; };
 		271DC4B019C0A93300C4A7E2 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 271DC4AF19C0A93300C4A7E2 /* TabBarViewController.m */; };
+		2760835219C0BE1B009C1102 /* Record.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2760835119C0BE1B009C1102 /* Record.plist */; };
 		3A185F0919C00529009BFB29 /* EX.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A185F0819C00529009BFB29 /* EX.png */; };
 		3A53D0F119BFFF5D00C8D788 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A53D0F019BFFF5D00C8D788 /* Default.png */; };
 		3A6CC6C419C0040800A1D756 /* TROPHY.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A6CC6C319C0040800A1D756 /* TROPHY.png */; };
@@ -67,6 +68,7 @@
 		2709E8B719BF24E6005B8D99 /* BestRecViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BestRecViewController.m; sourceTree = "<group>"; };
 		271DC4AE19C0A93300C4A7E2 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		271DC4AF19C0A93300C4A7E2 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		2760835119C0BE1B009C1102 /* Record.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Record.plist; path = ../Record.plist; sourceTree = "<group>"; };
 		3A185F0819C00529009BFB29 /* EX.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EX.png; sourceTree = "<group>"; };
 		3A238E3419C066B100266AF5 /* ICON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ICON.png; path = ../ICON.png; sourceTree = "<group>"; };
 		3A53D0F019BFFF5D00C8D788 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 		2709E88519BF0B6A005B8D99 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2760835119C0BE1B009C1102 /* Record.plist */,
 				3A238E3419C066B100266AF5 /* ICON.png */,
 				3A8353D919C0035E0042B8AA /* TIME.png */,
 				3AC3B7AD19C011EA00CA0D36 /* ICON.png */,
@@ -264,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2709E89719BF0B6B005B8D99 /* Images.xcassets in Resources */,
+				2760835219C0BE1B009C1102 /* Record.plist in Resources */,
 				3A185F0919C00529009BFB29 /* EX.png in Resources */,
 				2709E88919BF0B6A005B8D99 /* InfoPlist.strings in Resources */,
 				3A8353DA19C0035E0042B8AA /* TIME.png in Resources */,

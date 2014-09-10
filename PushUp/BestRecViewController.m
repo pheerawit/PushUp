@@ -25,6 +25,14 @@
 
 - (void)viewDidLoad
 {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = [paths objectAtIndex:0];
+    NSString *plistPath = [documentDirectory stringByAppendingPathComponent:@"Record.plist"];
+    NSArray *stat = [[[NSArray alloc]initWithContentsOfFile:plistPath]mutableCopy];
+    NSDictionary *record = [stat objectAtIndex:0];
+    rpm.text = record[@"rpm"];
+    conR.text = record[@"conR"];
+    total.text = record[@"total"];
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }

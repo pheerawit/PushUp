@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="hKl-lK-VxF">
             <objects>
-                <tabBarController definesPresentationContext="YES" id="3xe-uU-CZx" sceneMemberID="viewController">
+                <tabBarController definesPresentationContext="YES" id="3xe-uU-CZx" customClass="TabBarViewController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="gFu-ez-ZSf">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
@@ -15,19 +15,20 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="cry-eL-TBh" kind="relationship" relationship="viewControllers" id="f95-al-hXM"/>
-                        <segue destination="sf2-rI-HZ7" kind="relationship" relationship="viewControllers" id="cnB-lK-UCY"/>
-                        <segue destination="WVY-UD-ccs" kind="relationship" relationship="viewControllers" id="3mg-NC-hiM"/>
+                        <outlet property="tabBar" destination="gFu-ez-ZSf" id="Ok5-eV-a6n"/>
+                        <segue destination="cry-eL-TBh" kind="relationship" relationship="viewControllers" id="rX2-aB-D1N"/>
+                        <segue destination="sf2-rI-HZ7" kind="relationship" relationship="viewControllers" id="Xqg-pJ-qkq"/>
+                        <segue destination="WVY-UD-ccs" kind="relationship" relationship="viewControllers" id="liZ-Cp-asr"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hEI-Za-Xbc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="181" y="500"/>
         </scene>
-        <!--View Controller - Best Record-->
+        <!--Best Rec View Controller - Personal Record-->
         <scene sceneID="TX5-hz-s6l">
             <objects>
-                <viewController id="WVY-UD-ccs" sceneMemberID="viewController">
+                <viewController id="WVY-UD-ccs" customClass="BestRecViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j9L-Pv-zok"/>
                         <viewControllerLayoutGuide type="bottom" id="gaX-5D-ze5"/>
@@ -35,9 +36,53 @@
                     <view key="view" contentMode="scaleToFill" id="cFR-dr-d40">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Best rounds/min" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qJf-Mm-UUo">
+                                <rect key="frame" x="20" y="150" width="127" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Most consecutive rounds" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JqX-YV-S1o">
+                                <rect key="frame" x="20" y="243" width="194" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlI-GJ-64h">
+                                <rect key="frame" x="20" y="358" width="37" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVy-9j-fRx">
+                                <rect key="frame" x="258" y="150" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSK-vG-ymd">
+                                <rect key="frame" x="258" y="243" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Szq-6i-Ydr">
+                                <rect key="frame" x="258" y="358" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Best Record" image="TROPHY.png" id="tsb-eg-RxC"/>
+                    <tabBarItem key="tabBarItem" title="Personal Record" image="TROPHY.png" id="tsb-eg-RxC"/>
+                    <connections>
+                        <outlet property="conR" destination="wSK-vG-ymd" id="kwc-zJ-Fpy"/>
+                        <outlet property="rpm" destination="iVy-9j-fRx" id="YQh-Mt-qYE"/>
+                        <outlet property="total" destination="Szq-6i-Ydr" id="pGo-6N-Mez"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xEx-SI-hjE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

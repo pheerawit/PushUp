@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BestRecViewController : UIViewController
+@interface BestRecViewController : UIViewController{
+    
+    IBOutlet UILabel *rpm;
+    IBOutlet UILabel *conR;
+    IBOutlet UILabel *total;
+}
 
 @end
