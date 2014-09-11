@@ -22,6 +22,14 @@ NSString *minlbl;
 NSString *seclbl;
 NSTimer *timer;
 UIDevice *device;
+int oldRpmT;
+int oldConT;
+int oldTotalT;
+int newRpmT;
+int newConT;
+int newTotalT;
+int conCountT;
+NSDictionary *recordT;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -33,11 +41,6 @@ UIDevice *device;
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    //set visible
-    NSLog(@"Time Atk");
-    device.proximityMonitoringEnabled = NO;
-    _counting.hidden = YES;
     // Do any additional setup after loading the view.
     mins = [[NSArray alloc]init];
     second = [[NSArray alloc]init];
@@ -52,6 +55,23 @@ UIDevice *device;
     // Do any additional setup after loading the view.
     count2 =0;
 
+
+}
+- (void)viewWillAppear:(BOOL)animated{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = [paths objectAtIndex:0];
+    NSString *plistPath = [documentDirectory stringByAppendingPathComponent:@"Record.plist"];
+    NSArray *stat = [[[NSArray alloc]initWithContentsOfFile:plistPath]mutableCopy];
+    recordT = [stat objectAtIndex:0];
+    oldRpmT = [recordT[@"rpm"] intValue];
+    oldConT = [recordT[@"conR"] intValue];
+    oldTotalT = [recordT[@"total"] intValue];
+    //NSLog(@"%i", oldTotalT);
+    [super viewDidLoad];
+    //set visible
+    //NSLog(@"Time Atk");
+    device.proximityMonitoringEnabled = NO;
+    _counting.hidden = YES;
 
 }
 
@@ -170,6 +190,30 @@ UIDevice *device;
 
 
 - (IBAction)resetTime:(id)sender {
+    newTotalT = oldTotalT + count2;
+    int totaltime = (minute*60)+secDisplay;
+    newRpmT = ((float)count2/totaltime)*60;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"Record.plist"];
+    if (newRpmT > oldRpmT){
+        oldRpmT = newRpmT;
+    }
+    newConT = conCountT;
+    if (newConT >oldConT){
+        oldConT = newConT;
+    }
+    NSString *rpmStr = [NSString stringWithFormat:@"%i",oldRpmT];
+    NSString *conStr = [NSString stringWithFormat:@"%i",oldConT];
+    NSString *totalStr = [NSString stringWithFormat:@"%i",newTotalT];
+    NSArray *keys = [NSArray arrayWithObjects:@"rpm", @"conR",@"total", nil];
+    NSArray *objects = [NSArray arrayWithObjects:rpmStr, conStr,totalStr, nil];
+    NSDictionary *stat = [NSDictionary dictionaryWithObjects:objects
+                                                     forKeys:keys];
+    NSMutableArray *newRecord = [[NSMutableArray alloc]initWithObjects:stat, nil];
+    [newRecord writeToFile:filePath atomically:YES];
+    
+
     if(timer){
         [timer invalidate];
         timer = nil;
@@ -181,6 +225,30 @@ UIDevice *device;
     device.proximityMonitoringEnabled = NO;
 }
 -(void)resetClock{
+    newTotalT = oldTotalT + count2;
+    int totaltime = (minute*60)+secDisplay;
+    newRpmT = ((float)count2/totaltime)*60;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"Record.plist"];
+    if (newRpmT > oldRpmT){
+        oldRpmT = newRpmT;
+    }
+    newConT = conCountT;
+    if (newConT >oldConT){
+        oldConT = newConT;
+    }
+    NSString *rpmStr = [NSString stringWithFormat:@"%i",oldRpmT];
+    NSString *conStr = [NSString stringWithFormat:@"%i",oldConT];
+    NSString *totalStr = [NSString stringWithFormat:@"%i",newTotalT];
+    NSArray *keys = [NSArray arrayWithObjects:@"rpm", @"conR",@"total", nil];
+    NSArray *objects = [NSArray arrayWithObjects:rpmStr, conStr,totalStr, nil];
+    NSDictionary *stat = [NSDictionary dictionaryWithObjects:objects
+                                                     forKeys:keys];
+    NSMutableArray *newRecord = [[NSMutableArray alloc]initWithObjects:stat, nil];
+    [newRecord writeToFile:filePath atomically:YES];
+    
+
     if(timer){
         [timer invalidate];
         timer = nil;
@@ -194,13 +262,20 @@ UIDevice *device;
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
+/*
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     [self resetTime:self];
-    NSLog(@"Call");
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
+ */
+- (void)viewWillDisappear:(BOOL)animated {
+    device.proximityMonitoringEnabled = NO;
+    [self resetClock];
+    [self resetTime:self];
+}
+
 
 
 @end

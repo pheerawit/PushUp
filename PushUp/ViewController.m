@@ -18,6 +18,14 @@ NSTimer *timer;
 int min;
 int sec;
 UIDevice *device;
+int oldRpm;
+int oldCon;
+int oldTotal;
+int newRpm;
+int newCon;
+int newTotal;
+int conCount;
+NSDictionary *record;
 - (void)viewDidLoad
 {
     count =0;
@@ -25,12 +33,23 @@ UIDevice *device;
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 }
+- (void)viewWillAppear:(BOOL)animated{
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = [paths objectAtIndex:0];
+    NSString *plistPath = [documentDirectory stringByAppendingPathComponent:@"Record.plist"];
+    NSArray *stat = [[[NSArray alloc]initWithContentsOfFile:plistPath]mutableCopy];
+    record = [stat objectAtIndex:0];
+    oldRpm = [record[@"rpm"] intValue];
+    oldCon = [record[@"conR"] intValue];
+    oldTotal = [record[@"total"] intValue];
+    //NSLog(@"%i", oldTotal);
 
+}
 - (void) proximityChanged:(NSNotification *)notification {
 	UIDevice *device = [notification object];
-	NSLog(@"In proximity: %i", device.proximityState);
     if(device.proximityState){
         count++;
+        conCount ++;
     }
     display.text = [NSString stringWithFormat:@"%i",count];
 }
@@ -76,28 +95,57 @@ UIDevice *device;
 }
 
 - (IBAction)stop:(id)sender {
+    newTotal = oldTotal + count;
+    int totaltime = (min*60)+sec;
+    newRpm = ((float)count/totaltime)*60;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"Record.plist"];
+    if (newRpm > oldRpm){
+        oldRpm = newRpm;
+    }
+    newCon = conCount;
+    if (newCon >oldCon){
+        oldCon = newCon;
+    }
+    NSString *rpmStr = [NSString stringWithFormat:@"%i",oldRpm];
+    NSString *conStr = [NSString stringWithFormat:@"%i",oldCon];
+    NSString *totalStr = [NSString stringWithFormat:@"%i",newTotal];
+    NSArray *keys = [NSArray arrayWithObjects:@"rpm", @"conR",@"total", nil];
+    NSArray *objects = [NSArray arrayWithObjects:rpmStr, conStr,totalStr, nil];
+    NSDictionary *stat = [NSDictionary dictionaryWithObjects:objects
+                                                     forKeys:keys];
+    NSMutableArray *newRecord = [[NSMutableArray alloc]initWithObjects:stat, nil];
+    [newRecord writeToFile:filePath atomically:YES];
     if(timer){
 		[timer invalidate];
 		timer = nil;
 	}
     device.proximityMonitoringEnabled = NO;
+    conCount =0;
 
 }
 
 - (IBAction)reset:(id)sender {
+    [self stop:self];
     min = 0;
     sec = 0;
-    [self stop:self];
     _show.text = [NSString stringWithFormat:@"0%i : 0%i",min,sec];
     count = 0;
     display.text = [NSString stringWithFormat:@"%i",count];
 }
+/*
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     [self stop:self];
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-
+ */
+- (void)viewWillDisappear:(BOOL)animated {
+    NSLog(@"BYEEE");
+    device.proximityMonitoringEnabled = NO;
+    [self reset:self];
+}
 
 @end

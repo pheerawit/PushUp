@@ -25,6 +25,12 @@
 
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+}
+- (void)viewWillAppear:(BOOL)animated
+{
+    NSLog(@"LOADDDDD");
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentDirectory = [paths objectAtIndex:0];
     NSString *plistPath = [documentDirectory stringByAppendingPathComponent:@"Record.plist"];
@@ -33,8 +39,9 @@
     rpm.text = record[@"rpm"];
     conR.text = record[@"conR"];
     total.text = record[@"total"];
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
+
+    [super viewWillAppear:animated];
+    // do stuff
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,4 +61,20 @@
 }
 */
 
+- (IBAction)resetRecord:(id)sender {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"Record.plist"];
+    NSArray *keys = [NSArray arrayWithObjects:@"rpm", @"conR",@"total", nil];
+    NSArray *objects = [NSArray arrayWithObjects:@"0", @"0",@"0", nil];
+    NSDictionary *stat = [NSDictionary dictionaryWithObjects:objects
+                                                     forKeys:keys];
+    NSMutableArray *newRecord = [[NSMutableArray alloc]initWithObjects:stat, nil];
+    [newRecord writeToFile:filePath atomically:YES];
+    rpm.text = @"0";
+    conR.text = @"0";
+    total.text = @"0";
+
+
+}
 @end

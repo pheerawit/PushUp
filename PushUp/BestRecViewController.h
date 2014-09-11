@@ -14,5 +14,6 @@
     IBOutlet UILabel *conR;
     IBOutlet UILabel *total;
 }
+- (IBAction)resetRecord:(id)sender;
 
 @end
