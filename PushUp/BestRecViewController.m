@@ -30,7 +30,6 @@
 }
 - (void)viewWillAppear:(BOOL)animated
 {
-    NSLog(@"LOADDDDD");
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentDirectory = [paths objectAtIndex:0];
     NSString *plistPath = [documentDirectory stringByAppendingPathComponent:@"Record.plist"];

@@ -80,17 +80,17 @@ NSDictionary *recordT;
 
 - (void) proximityChanged:(NSNotification *)notification {
 	//UIDevice *device = [notification object];
-	NSLog(@"In proximity: %i", device.proximityState);
     if(device.proximityState){
         count2++;
+        SystemSoundID pewPewSound1;
+        NSString *pewPewPath = [[NSBundle mainBundle]
+                                pathForResource:@"bleep" ofType:@"wav"];
+        NSURL *pewPewURL = [NSURL fileURLWithPath:pewPewPath];
+        AudioServicesCreateSystemSoundID((__bridge CFURLRef)pewPewURL, &pewPewSound1);
+        AudioServicesPlaySystemSound(pewPewSound1);
     }
     _display2.text = [NSString stringWithFormat:@"%i",count2];
-    SystemSoundID pewPewSound1;
-    NSString *pewPewPath = [[NSBundle mainBundle]
-                            pathForResource:@"bleep" ofType:@"wav"];
-    NSURL *pewPewURL = [NSURL fileURLWithPath:pewPewPath];
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)pewPewURL, &pewPewSound1);
-    AudioServicesPlaySystemSound(pewPewSound1);
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -208,6 +208,7 @@ NSDictionary *recordT;
 
 
 - (IBAction)resetTime:(id)sender {
+    conCountT = count2;
     [_startAtk setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     newTotalT = oldTotalT + count2;
     int totaltime = (minute*60)+secDisplay;

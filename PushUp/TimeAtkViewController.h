@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TimeAtkViewController : UIViewController
+@interface TimeAtkViewController : UIViewController<UIPickerViewDelegate,UIPickerViewDataSource>
 @property (weak, nonatomic) IBOutlet UIPickerView *setTime;
 - (IBAction)startCount:(id)sender;
 - (IBAction)resetTime:(id)sender;

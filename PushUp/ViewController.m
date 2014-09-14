@@ -28,6 +28,7 @@ int conCount;
 NSDictionary *record;
 - (void)viewDidLoad
 {
+
     count =0;
     device = [UIDevice currentDevice];
     [super viewDidLoad];
@@ -52,13 +53,14 @@ NSDictionary *record;
     if(device.proximityState){
         count++;
         conCount ++;
+        SystemSoundID pewPewSound1;
+        NSString *pewPewPath = [[NSBundle mainBundle]
+                                pathForResource:@"bleep" ofType:@"wav"];
+        NSURL *pewPewURL = [NSURL fileURLWithPath:pewPewPath];
+        AudioServicesCreateSystemSoundID((__bridge CFURLRef)pewPewURL, &pewPewSound1);
+        AudioServicesPlaySystemSound(pewPewSound1);
     }
-    SystemSoundID pewPewSound1;
-    NSString *pewPewPath = [[NSBundle mainBundle]
-                            pathForResource:@"bleep" ofType:@"wav"];
-    NSURL *pewPewURL = [NSURL fileURLWithPath:pewPewPath];
-    AudioServicesCreateSystemSoundID((__bridge CFURLRef)pewPewURL, &pewPewSound1);
-    AudioServicesPlaySystemSound(pewPewSound1);
+    
     display.text = [NSString stringWithFormat:@"%i",count];
 }
 
@@ -157,7 +159,6 @@ NSDictionary *record;
 }
  */
 - (void)viewWillDisappear:(BOOL)animated {
-    NSLog(@"BYEEE");
     device.proximityMonitoringEnabled = NO;
     [self reset:self];
 }
