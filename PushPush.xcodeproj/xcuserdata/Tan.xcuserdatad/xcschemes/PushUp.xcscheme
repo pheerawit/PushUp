@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2709E87A19BF0B6A005B8D99"
-               BuildableName = "PushUp.app"
-               BlueprintName = "PushUp"
-               ReferencedContainer = "container:PushUp.xcodeproj">
+               BuildableName = "PushPush.app"
+               BlueprintName = "PushPush"
+               ReferencedContainer = "container:PushPush.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2709E89B19BF0B6B005B8D99"
-               BuildableName = "PushUpTests.xctest"
-               BlueprintName = "PushUpTests"
-               ReferencedContainer = "container:PushUp.xcodeproj">
+               BuildableName = "PushPushTests.xctest"
+               BlueprintName = "PushPushTests"
+               ReferencedContainer = "container:PushPush.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2709E87A19BF0B6A005B8D99"
-            BuildableName = "PushUp.app"
-            BlueprintName = "PushUp"
-            ReferencedContainer = "container:PushUp.xcodeproj">
+            BuildableName = "PushPush.app"
+            BlueprintName = "PushPush"
+            ReferencedContainer = "container:PushPush.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2709E87A19BF0B6A005B8D99"
-            BuildableName = "PushUp.app"
-            BlueprintName = "PushUp"
-            ReferencedContainer = "container:PushUp.xcodeproj">
+            BuildableName = "PushPush.app"
+            BlueprintName = "PushPush"
+            ReferencedContainer = "container:PushPush.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2709E87A19BF0B6A005B8D99"
-            BuildableName = "PushUp.app"
-            BlueprintName = "PushUp"
-            ReferencedContainer = "container:PushUp.xcodeproj">
+            BuildableName = "PushPush.app"
+            BlueprintName = "PushPush"
+            ReferencedContainer = "container:PushPush.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

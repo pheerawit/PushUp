@@ -45,22 +45,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2709E87B19BF0B6A005B8D99 /* PushUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2709E87B19BF0B6A005B8D99 /* PushPush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushPush.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2709E87E19BF0B6A005B8D99 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2709E88019BF0B6A005B8D99 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2709E88219BF0B6A005B8D99 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		2709E88619BF0B6A005B8D99 /* PushUp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PushUp-Info.plist"; sourceTree = "<group>"; };
+		2709E88619BF0B6A005B8D99 /* PushPush-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PushPush-Info.plist"; sourceTree = "<group>"; };
 		2709E88819BF0B6A005B8D99 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2709E88A19BF0B6A005B8D99 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2709E88C19BF0B6A005B8D99 /* PushUp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PushUp-Prefix.pch"; sourceTree = "<group>"; };
+		2709E88C19BF0B6A005B8D99 /* PushPush-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PushPush-Prefix.pch"; sourceTree = "<group>"; };
 		2709E88D19BF0B6A005B8D99 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2709E88E19BF0B6A005B8D99 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2709E89119BF0B6B005B8D99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2709E89319BF0B6B005B8D99 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		2709E89419BF0B6B005B8D99 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		2709E89C19BF0B6B005B8D99 /* PushUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PushUpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2709E89C19BF0B6B005B8D99 /* PushPushTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PushPushTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2709E89D19BF0B6B005B8D99 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		2709E8A519BF0B6B005B8D99 /* PushUpTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PushUpTests-Info.plist"; sourceTree = "<group>"; };
+		2709E8A519BF0B6B005B8D99 /* PushPushTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PushPushTests-Info.plist"; sourceTree = "<group>"; };
 		2709E8A719BF0B6B005B8D99 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2709E8A919BF0B6B005B8D99 /* PushUpTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PushUpTests.m; sourceTree = "<group>"; };
 		2709E8B319BF2474005B8D99 /* TimeAtkViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeAtkViewController.h; sourceTree = "<group>"; };
@@ -118,8 +118,8 @@
 		2709E87C19BF0B6A005B8D99 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2709E87B19BF0B6A005B8D99 /* PushUp.app */,
-				2709E89C19BF0B6B005B8D99 /* PushUpTests.xctest */,
+				2709E87B19BF0B6A005B8D99 /* PushPush.app */,
+				2709E89C19BF0B6B005B8D99 /* PushPushTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -167,10 +167,10 @@
 				3A6CC6C319C0040800A1D756 /* TROPHY.png */,
 				3A185F0819C00529009BFB29 /* EX.png */,
 				3A53D0F019BFFF5D00C8D788 /* Default.png */,
-				2709E88619BF0B6A005B8D99 /* PushUp-Info.plist */,
+				2709E88619BF0B6A005B8D99 /* PushPush-Info.plist */,
 				2709E88719BF0B6A005B8D99 /* InfoPlist.strings */,
 				2709E88A19BF0B6A005B8D99 /* main.m */,
-				2709E88C19BF0B6A005B8D99 /* PushUp-Prefix.pch */,
+				2709E88C19BF0B6A005B8D99 /* PushPush-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -187,7 +187,7 @@
 		2709E8A419BF0B6B005B8D99 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2709E8A519BF0B6B005B8D99 /* PushUpTests-Info.plist */,
+				2709E8A519BF0B6B005B8D99 /* PushPushTests-Info.plist */,
 				2709E8A619BF0B6B005B8D99 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -196,9 +196,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2709E87A19BF0B6A005B8D99 /* PushUp */ = {
+		2709E87A19BF0B6A005B8D99 /* PushPush */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2709E8AD19BF0B6B005B8D99 /* Build configuration list for PBXNativeTarget "PushUp" */;
+			buildConfigurationList = 2709E8AD19BF0B6B005B8D99 /* Build configuration list for PBXNativeTarget "PushPush" */;
 			buildPhases = (
 				2709E87719BF0B6A005B8D99 /* Sources */,
 				2709E87819BF0B6A005B8D99 /* Frameworks */,
@@ -208,14 +208,14 @@
 			);
 			dependencies = (
 			);
-			name = PushUp;
+			name = PushPush;
 			productName = PushUp;
-			productReference = 2709E87B19BF0B6A005B8D99 /* PushUp.app */;
+			productReference = 2709E87B19BF0B6A005B8D99 /* PushPush.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2709E89B19BF0B6B005B8D99 /* PushUpTests */ = {
+		2709E89B19BF0B6B005B8D99 /* PushPushTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2709E8B019BF0B6B005B8D99 /* Build configuration list for PBXNativeTarget "PushUpTests" */;
+			buildConfigurationList = 2709E8B019BF0B6B005B8D99 /* Build configuration list for PBXNativeTarget "PushPushTests" */;
 			buildPhases = (
 				2709E89819BF0B6B005B8D99 /* Sources */,
 				2709E89919BF0B6B005B8D99 /* Frameworks */,
@@ -226,9 +226,9 @@
 			dependencies = (
 				2709E8A219BF0B6B005B8D99 /* PBXTargetDependency */,
 			);
-			name = PushUpTests;
+			name = PushPushTests;
 			productName = PushUpTests;
-			productReference = 2709E89C19BF0B6B005B8D99 /* PushUpTests.xctest */;
+			productReference = 2709E89C19BF0B6B005B8D99 /* PushPushTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -248,7 +248,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2709E87619BF0B6A005B8D99 /* Build configuration list for PBXProject "PushUp" */;
+			buildConfigurationList = 2709E87619BF0B6A005B8D99 /* Build configuration list for PBXProject "PushPush" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -261,8 +261,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2709E87A19BF0B6A005B8D99 /* PushUp */,
-				2709E89B19BF0B6B005B8D99 /* PushUpTests */,
+				2709E87A19BF0B6A005B8D99 /* PushPush */,
+				2709E89B19BF0B6B005B8D99 /* PushPushTests */,
 			);
 		};
 /* End PBXProject section */
@@ -323,7 +323,7 @@
 /* Begin PBXTargetDependency section */
 		2709E8A219BF0B6B005B8D99 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2709E87A19BF0B6A005B8D99 /* PushUp */;
+			target = 2709E87A19BF0B6A005B8D99 /* PushPush */;
 			targetProxy = 2709E8A119BF0B6B005B8D99 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -432,9 +432,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PushUp/PushUp-Prefix.pch";
-				INFOPLIST_FILE = "PushUp/PushUp-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "PushUp/PushPush-Prefix.pch";
+				INFOPLIST_FILE = "PushUp/PushPush-Info.plist";
+				PRODUCT_NAME = PushPush;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -446,9 +446,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PushUp/PushUp-Prefix.pch";
-				INFOPLIST_FILE = "PushUp/PushUp-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "PushUp/PushPush-Prefix.pch";
+				INFOPLIST_FILE = "PushUp/PushPush-Info.plist";
+				PRODUCT_NAME = PushPush;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -469,8 +469,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "PushUpTests/PushUpTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "PushUpTests/PushPushTests-Info.plist";
+				PRODUCT_NAME = PushPushTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -487,8 +487,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PushUp/PushUp-Prefix.pch";
-				INFOPLIST_FILE = "PushUpTests/PushUpTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "PushUpTests/PushPushTests-Info.plist";
+				PRODUCT_NAME = PushPushTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -497,7 +497,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2709E87619BF0B6A005B8D99 /* Build configuration list for PBXProject "PushUp" */ = {
+		2709E87619BF0B6A005B8D99 /* Build configuration list for PBXProject "PushPush" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2709E8AB19BF0B6B005B8D99 /* Debug */,
@@ -506,7 +506,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2709E8AD19BF0B6B005B8D99 /* Build configuration list for PBXNativeTarget "PushUp" */ = {
+		2709E8AD19BF0B6B005B8D99 /* Build configuration list for PBXNativeTarget "PushPush" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2709E8AE19BF0B6B005B8D99 /* Debug */,
@@ -515,7 +515,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2709E8B019BF0B6B005B8D99 /* Build configuration list for PBXNativeTarget "PushUpTests" */ = {
+		2709E8B019BF0B6B005B8D99 /* Build configuration list for PBXNativeTarget "PushPushTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2709E8B119BF0B6B005B8D99 /* Debug */,

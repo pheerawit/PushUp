@@ -45,7 +45,7 @@ NSDictionary *record;
     oldRpm = [record[@"rpm"] intValue];
     oldCon = [record[@"conR"] intValue];
     oldTotal = [record[@"total"] intValue];
-    //NSLog(@"%i", oldTotal);
+    NSLog(record[@"total"]);
 
 }
 - (void) proximityChanged:(NSNotification *)notification {

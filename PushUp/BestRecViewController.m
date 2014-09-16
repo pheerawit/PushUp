@@ -38,7 +38,7 @@
     rpm.text = record[@"rpm"];
     conR.text = record[@"conR"];
     total.text = record[@"total"];
-
+    NSLog(@"%@",record[@"total"]);
     [super viewWillAppear:animated];
     // do stuff
 }
@@ -61,6 +61,7 @@
 */
 
 - (IBAction)resetRecord:(id)sender {
+    NSLog(@"Reset");
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"Record.plist"];

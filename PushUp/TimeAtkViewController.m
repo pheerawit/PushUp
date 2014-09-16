@@ -31,6 +31,8 @@ int newRpmT;
 int newConT;
 int newTotalT;
 int conCountT;
+int beginMin;
+int beginSec;
 NSDictionary *recordT;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -55,11 +57,13 @@ NSDictionary *recordT;
     self.setTime.dataSource = self;
     self.setTime.delegate = self;
     // Do any additional setup after loading the view.
-    count2 =0;
+    
 
 
 }
 - (void)viewWillAppear:(BOOL)animated{
+    count2 =0;
+    _display2.text = [NSString stringWithFormat:@"%i",count2];
     [_startAtk setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentDirectory = [paths objectAtIndex:0];
@@ -69,7 +73,7 @@ NSDictionary *recordT;
     oldRpmT = [recordT[@"rpm"] intValue];
     oldConT = [recordT[@"conR"] intValue];
     oldTotalT = [recordT[@"total"] intValue];
-    //NSLog(@"%i", oldTotalT);
+    NSLog(@"%i", oldTotalT);
     [super viewDidLoad];
     //set visible
     //NSLog(@"Time Atk");
@@ -145,6 +149,8 @@ NSDictionary *recordT;
     //get data
     minute = [_setTime selectedRowInComponent:0];
     secDisplay = [_setTime selectedRowInComponent:2];
+    beginMin = minute;
+    beginSec = secDisplay;
     NSString *clock;
     if(secDisplay <=9 && minute <=9){
         clock = [NSString stringWithFormat:@"0%i : 0%i",minute,secDisplay];
@@ -211,7 +217,7 @@ NSDictionary *recordT;
     conCountT = count2;
     [_startAtk setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     newTotalT = oldTotalT + count2;
-    int totaltime = (minute*60)+secDisplay;
+    int totaltime = (beginMin*60)+beginSec;
     newRpmT = ((float)count2/totaltime)*60;
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
@@ -251,9 +257,9 @@ NSDictionary *recordT;
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *documentsDirectory = [paths objectAtIndex:0];
     NSString *filePath = [documentsDirectory stringByAppendingPathComponent:@"Record.plist"];
-    if (newRpmT > oldRpmT){
-        oldRpmT = newRpmT;
-    }
+//    if (newRpmT > oldRpmT){
+//        oldRpmT = newRpmT;
+//    }
     newConT = conCountT;
     if (newConT >oldConT){
         oldConT = newConT;
