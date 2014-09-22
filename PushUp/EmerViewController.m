@@ -13,6 +13,7 @@
     SystemSoundID help1;
     SystemSoundID help2;
     SystemSoundID help3;
+    SystemSoundID help4;
 }
 
 @end
@@ -64,25 +65,26 @@
 }
 
 - (IBAction)help2:(id)sender {
-//    NSString *pewPewPath = [[NSBundle mainBundle]
-//                            pathForResource:@"Help_eiei" ofType:@"wav"];
-//    NSURL *pewPewURL = [NSURL fileURLWithPath:pewPewPath];
-//    AudioServicesCreateSystemSoundID((__bridge CFURLRef)pewPewURL, &help2);
-//    AudioServicesPlaySystemSound(help2);
+    NSString *pewPewPath = [[NSBundle mainBundle]
+                            pathForResource:@"Help_eiei" ofType:@"wav"];
+    NSURL *pewPewURL = [NSURL fileURLWithPath:pewPewPath];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)pewPewURL, &help2);
+    AudioServicesPlaySystemSound(help2);
 }
 
 - (IBAction)help3:(id)sender {
-//  
-//    NSString *pewPewPath = [[NSBundle mainBundle]
-//                            pathForResource:@"Help" ofType:@"wav"];
-//    NSURL *pewPewURL = [NSURL fileURLWithPath:pewPewPath];
-//    AudioServicesCreateSystemSoundID((__bridge CFURLRef)pewPewURL, &help3);
-//    AudioServicesPlaySystemSound(help3);
+  
+    NSString *pewPewPath = [[NSBundle mainBundle]
+                            pathForResource:@"Help" ofType:@"wav"];
+    NSURL *pewPewURL = [NSURL fileURLWithPath:pewPewPath];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)pewPewURL, &help3);
+    AudioServicesPlaySystemSound(help3);
 }
 
 - (IBAction)StopSound:(id)sender {
-//    AudioServicesDisposeSystemSoundID(help1);
-//    AudioServicesDisposeSystemSoundID(help2);
-//    AudioServicesDisposeSystemSoundID(help3);
+    AudioServicesDisposeSystemSoundID(help1);
+    AudioServicesDisposeSystemSoundID(help2);
+    AudioServicesDisposeSystemSoundID(help3);
 }
+
 @end

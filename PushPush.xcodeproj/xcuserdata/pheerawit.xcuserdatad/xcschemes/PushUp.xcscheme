@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2709E87A19BF0B6A005B8D99"
-            BuildableName = "PushUp.app"
-            BlueprintName = "PushUp"
-            ReferencedContainer = "container:PushUp.xcodeproj">
+            BuildableName = "PushPush.app"
+            BlueprintName = "PushPush"
+            ReferencedContainer = "container:PushPush.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2709E87A19BF0B6A005B8D99"
-            BuildableName = "PushUp.app"
-            BlueprintName = "PushUp"
-            ReferencedContainer = "container:PushUp.xcodeproj">
+            BuildableName = "PushPush.app"
+            BlueprintName = "PushPush"
+            ReferencedContainer = "container:PushPush.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>

@@ -9,7 +9,10 @@
 #import "ViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <AVFoundation/AVCaptureDevice.h>
-@interface ViewController ()
+#import <AudioToolbox/AudioToolbox.h>
+@interface ViewController (){
+    SystemSoundID ready;
+   }
 @end
 
 @implementation ViewController
@@ -25,6 +28,8 @@ int newRpm;
 int newCon;
 int newTotal;
 int conCount;
+
+
 NSDictionary *record;
 - (void)viewDidLoad
 {
@@ -96,6 +101,13 @@ NSDictionary *record;
     [_startB setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
     [_stopB setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"UIDeviceProximityStateDidChangeNotification" object:device];
+   
+    NSString *pewPewPath = [[NSBundle mainBundle]
+                            pathForResource:@"readysetgo" ofType:@"wav"];
+    NSURL *pewPewURL = [NSURL fileURLWithPath:pewPewPath];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)pewPewURL, &ready);
+    AudioServicesPlaySystemSound(ready);
+    [NSThread sleepForTimeInterval:4];
     if(timer == nil){
         timer = [NSTimer scheduledTimerWithTimeInterval:1.00 target:self selector:@selector(setCommand) userInfo:nil repeats:YES];
     }
@@ -103,6 +115,7 @@ NSDictionary *record;
     if (device.proximityMonitoringEnabled == YES){
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(proximityChanged:) name:@"UIDeviceProximityStateDidChangeNotification" object:device];
     }
+    
     
 }
 

@@ -8,7 +8,9 @@
 
 #import "TimeAtkViewController.h"
 #import <AudioToolbox/AudioToolbox.h>
-@interface TimeAtkViewController ()
+@interface TimeAtkViewController (){
+    SystemSoundID ready;
+}
 
 @end
 
@@ -151,6 +153,12 @@ NSDictionary *recordT;
     secDisplay = [_setTime selectedRowInComponent:2];
     beginMin = minute;
     beginSec = secDisplay;
+    NSString *pewPewPath = [[NSBundle mainBundle]
+                            pathForResource:@"readysetgo" ofType:@"wav"];
+    NSURL *pewPewURL = [NSURL fileURLWithPath:pewPewPath];
+    AudioServicesCreateSystemSoundID((__bridge CFURLRef)pewPewURL, &ready);
+    AudioServicesPlaySystemSound(ready);
+    [NSThread sleepForTimeInterval:4];
     NSString *clock;
     if(secDisplay <=9 && minute <=9){
         clock = [NSString stringWithFormat:@"0%i : 0%i",minute,secDisplay];

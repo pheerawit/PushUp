@@ -12,6 +12,7 @@
 {
     IBOutlet UILabel *display;
 }
+
 @property (weak, nonatomic) IBOutlet UILabel *show;
 - (IBAction)start:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *startB;
