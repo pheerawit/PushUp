@@ -29,6 +29,13 @@
 		3A53D0F119BFFF5D00C8D788 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A53D0F019BFFF5D00C8D788 /* Default.png */; };
 		3A5651D819C2FD9500EE3617 /* sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3A5651D719C2FD9500EE3617 /* sound.wav */; };
 		3A5651DA19C2FF7700EE3617 /* bleep.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3A5651D919C2FF7700EE3617 /* bleep.wav */; };
+		3A6041BA19D002CC00471931 /* EmerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6041B919D002CC00471931 /* EmerViewController.m */; };
+		3A6041BD19D0054F00471931 /* Beedo_3.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3A6041BC19D0054F00471931 /* Beedo_3.wav */; };
+		3A6041C319D0069400471931 /* Go.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3A6041BE19D0069400471931 /* Go.wav */; };
+		3A6041C419D0069400471931 /* Help_eiei.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3A6041BF19D0069400471931 /* Help_eiei.wav */; };
+		3A6041C519D0069400471931 /* Help.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3A6041C019D0069400471931 /* Help.wav */; };
+		3A6041C619D0069400471931 /* Ready.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3A6041C119D0069400471931 /* Ready.wav */; };
+		3A6041C719D0069400471931 /* Set.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3A6041C219D0069400471931 /* Set.wav */; };
 		3A6CC6C419C0040800A1D756 /* TROPHY.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A6CC6C319C0040800A1D756 /* TROPHY.png */; };
 		3A8353DA19C0035E0042B8AA /* TIME.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A8353D919C0035E0042B8AA /* TIME.png */; };
 		3AC3B7AE19C011EA00CA0D36 /* ICON.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AC3B7AD19C011EA00CA0D36 /* ICON.png */; };
@@ -76,6 +83,15 @@
 		3A53D0F019BFFF5D00C8D788 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		3A5651D719C2FD9500EE3617 /* sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sound.wav; sourceTree = "<group>"; };
 		3A5651D919C2FF7700EE3617 /* bleep.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bleep.wav; sourceTree = "<group>"; };
+		3A6041B819D002CC00471931 /* EmerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmerViewController.h; sourceTree = "<group>"; };
+		3A6041B919D002CC00471931 /* EmerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmerViewController.m; sourceTree = "<group>"; };
+		3A6041BB19D003F700471931 /* Ready.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ready.m4a; sourceTree = "<group>"; };
+		3A6041BC19D0054F00471931 /* Beedo_3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Beedo_3.wav; sourceTree = "<group>"; };
+		3A6041BE19D0069400471931 /* Go.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Go.wav; sourceTree = "<group>"; };
+		3A6041BF19D0069400471931 /* Help_eiei.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Help_eiei.wav; sourceTree = "<group>"; };
+		3A6041C019D0069400471931 /* Help.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Help.wav; sourceTree = "<group>"; };
+		3A6041C119D0069400471931 /* Ready.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Ready.wav; sourceTree = "<group>"; };
+		3A6041C219D0069400471931 /* Set.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Set.wav; sourceTree = "<group>"; };
 		3A6CC6C319C0040800A1D756 /* TROPHY.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TROPHY.png; sourceTree = "<group>"; };
 		3A8353D919C0035E0042B8AA /* TIME.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TIME.png; sourceTree = "<group>"; };
 		3AC3B7AD19C011EA00CA0D36 /* ICON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ICON.png; sourceTree = "<group>"; };
@@ -141,6 +157,8 @@
 				2709E88D19BF0B6A005B8D99 /* AppDelegate.h */,
 				2709E88E19BF0B6A005B8D99 /* AppDelegate.m */,
 				2709E89019BF0B6B005B8D99 /* Main.storyboard */,
+				3A6041B819D002CC00471931 /* EmerViewController.h */,
+				3A6041B919D002CC00471931 /* EmerViewController.m */,
 				271DC4AE19C0A93300C4A7E2 /* TabBarViewController.h */,
 				271DC4AF19C0A93300C4A7E2 /* TabBarViewController.m */,
 				2709E8B619BF24E6005B8D99 /* BestRecViewController.h */,
@@ -157,7 +175,14 @@
 		2709E88519BF0B6A005B8D99 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3A6041BB19D003F700471931 /* Ready.m4a */,
 				27531C5C19C58B3000DD86CF /* Default-568h@2x.png */,
+				3A6041BC19D0054F00471931 /* Beedo_3.wav */,
+				3A6041BE19D0069400471931 /* Go.wav */,
+				3A6041BF19D0069400471931 /* Help_eiei.wav */,
+				3A6041C019D0069400471931 /* Help.wav */,
+				3A6041C119D0069400471931 /* Ready.wav */,
+				3A6041C219D0069400471931 /* Set.wav */,
 				3A5651D919C2FF7700EE3617 /* bleep.wav */,
 				3A5651D719C2FD9500EE3617 /* sound.wav */,
 				2760835119C0BE1B009C1102 /* Record.plist */,
@@ -272,14 +297,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A6041C319D0069400471931 /* Go.wav in Resources */,
+				3A6041C519D0069400471931 /* Help.wav in Resources */,
+				3A6041BD19D0054F00471931 /* Beedo_3.wav in Resources */,
 				27E4ACF619C58D9D00FA1FB0 /* Main.storyboard in Resources */,
 				3A5651D819C2FD9500EE3617 /* sound.wav in Resources */,
 				3A5651DA19C2FF7700EE3617 /* bleep.wav in Resources */,
+				3A6041C419D0069400471931 /* Help_eiei.wav in Resources */,
 				2760835219C0BE1B009C1102 /* Record.plist in Resources */,
 				27531C5D19C58B3000DD86CF /* Default-568h@2x.png in Resources */,
 				3A185F0919C00529009BFB29 /* EX.png in Resources */,
+				3A6041C619D0069400471931 /* Ready.wav in Resources */,
 				2709E88919BF0B6A005B8D99 /* InfoPlist.strings in Resources */,
 				3A8353DA19C0035E0042B8AA /* TIME.png in Resources */,
+				3A6041C719D0069400471931 /* Set.wav in Resources */,
 				3AC3B7AE19C011EA00CA0D36 /* ICON.png in Resources */,
 				3A53D0F119BFFF5D00C8D788 /* Default.png in Resources */,
 				3A6CC6C419C0040800A1D756 /* TROPHY.png in Resources */,
@@ -305,6 +336,7 @@
 				2709E89519BF0B6B005B8D99 /* ViewController.m in Sources */,
 				2709E88F19BF0B6A005B8D99 /* AppDelegate.m in Sources */,
 				2709E8B819BF24E6005B8D99 /* BestRecViewController.m in Sources */,
+				3A6041BA19D002CC00471931 /* EmerViewController.m in Sources */,
 				271DC4B019C0A93300C4A7E2 /* TabBarViewController.m in Sources */,
 				2709E88B19BF0B6A005B8D99 /* main.m in Sources */,
 			);

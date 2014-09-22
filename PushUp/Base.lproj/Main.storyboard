@@ -19,6 +19,7 @@
                         <segue destination="cry-eL-TBh" kind="relationship" relationship="viewControllers" id="rX2-aB-D1N"/>
                         <segue destination="sf2-rI-HZ7" kind="relationship" relationship="viewControllers" id="Xqg-pJ-qkq"/>
                         <segue destination="WVY-UD-ccs" kind="relationship" relationship="viewControllers" id="liZ-Cp-asr"/>
+                        <segue destination="Xlh-Wh-uTa" kind="relationship" relationship="viewControllers" id="s14-a5-2eI"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hEI-Za-Xbc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -300,6 +301,78 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ek7-EZ-jH3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="725" y="500"/>
+        </scene>
+        <!--Emer View Controller - Item-->
+        <scene sceneID="FAj-9m-YH1">
+            <objects>
+                <viewController id="Xlh-Wh-uTa" customClass="EmerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lHH-4X-dk2"/>
+                        <viewControllerLayoutGuide type="bottom" id="Oic-ed-os8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jkt-t9-nVf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvt-ZT-7SH">
+                                <rect key="frame" x="14" y="187" width="130" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <state key="normal" title="HELP 1">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="help1:" destination="Xlh-Wh-uTa" eventType="touchUpInside" id="c2o-d6-KSV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHd-bo-8bh">
+                                <rect key="frame" x="177" y="189" width="112" height="82"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="HELP 2">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="help2:" destination="Xlh-Wh-uTa" eventType="touchUpInside" id="xDZ-1Y-iFV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R0R-At-7fv">
+                                <rect key="frame" x="134" y="279" width="52" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="HELP 3">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="help3:" destination="Xlh-Wh-uTa" eventType="touchUpInside" id="YLC-dy-Mg1"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EzR-Oy-mHh">
+                                <rect key="frame" x="92" y="125" width="137" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="CALL AMBULANCE">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="call:" destination="Xlh-Wh-uTa" eventType="touchUpInside" id="5yc-X4-ZB6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZxE-fz-XiB">
+                                <rect key="frame" x="140" y="410" width="33" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Stop">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="StopSound:" destination="Xlh-Wh-uTa" eventType="touchUpInside" id="N83-qt-s5t"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="AeF-Rg-IkM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1dd-Vi-jiD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1150" y="768"/>
         </scene>
     </scenes>
     <resources>
