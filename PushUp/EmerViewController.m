@@ -52,6 +52,8 @@
 */
 
 - (IBAction)call:(id)sender {
+   [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel:2135554321"]];
+    NSLog(@"hello");
 }
 
 - (IBAction)help1:(id)sender {
